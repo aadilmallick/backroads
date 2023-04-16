@@ -409,6 +409,40 @@ Featured Tours
 Contact
 ===============
 */
+#contact {
+  background-color: var(--clr-primary-5);
+}
+#contact .contact-title {
+  color: var(--clr-white);
+}
+#contact .contact-title p {
+  color: var(--clr-primary-8);
+}
+#contact .contact-form {
+  display: flex;
+  gap: 0 1rem;
+  max-width: 28rem;
+}
+#contact .contact-form .form-control {
+  flex: 1 1 4rem;
+  padding: 0.5rem;
+}
+#contact .contact-form button {
+  border: 1px solid var(--clr-white);
+}
+
+@media (min-width: 992px) {
+  #contact .contact-center {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  #contact .contact-form {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+}
 /*
 =============== 
 Gallery

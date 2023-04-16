@@ -451,6 +451,43 @@ Contact
 ===============
 */
 
+#contact {
+  background-color: var(--clr-primary-5);
+  .contact-title {
+    color: var(--clr-white);
+    p {
+      color: var(--clr-primary-8);
+    }
+  }
+  .contact-form {
+    display: flex;
+    gap: 0 1rem;
+    max-width: 28rem;
+    .form-control {
+      flex: 1 1 4rem;
+      padding: 0.5rem;
+    }
+    button {
+      border: 1px solid var(--clr-white);
+    }
+  }
+}
+
+@media (min-width: $laptop) {
+  #contact {
+    .contact-center {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .contact-form {
+      flex: 1 1 auto;
+      max-width: 100%;
+    }
+  }
+}
+
 /*
 =============== 
 Gallery
