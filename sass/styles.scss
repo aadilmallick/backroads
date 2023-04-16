@@ -494,6 +494,56 @@ Gallery
 ===============
 */
 
+#gallery {
+  .gallery-center {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .gallery-img-container {
+    position: relative;
+    // add background color to img container.
+    // reduce opacity for image to show backgorund effect on hover
+    background-color: var(--clr-primary-5);
+    img {
+      transition: var(--transition);
+    }
+    &:hover {
+      img {
+        opacity: 0.7;
+      }
+      .gallery-icon {
+        opacity: 1;
+      }
+    }
+  }
+  // set icon in the center. make invisible, then hover effect increase opacity
+  .gallery-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: var(--transition);
+    font-size: 2rem;
+    color: var(--clr-primary-8);
+    opacity: 0;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: $laptop) {
+  #gallery {
+    .gallery-center {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (min-width: $laptop) {
+  #gallery {
+    .gallery-center {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
 /*
 =============== 
 Footer
