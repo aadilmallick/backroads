@@ -252,6 +252,7 @@ About
 #about .about-center .about-img,
 #about .about-center .about-info {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 @media screen and (min-width: 992px) {
@@ -342,6 +343,67 @@ Services
 Featured Tours
 ===============
 */
+#featured .tour-card {
+  transition: var(--transition);
+  background: var(--clr-grey-10);
+  box-shadow: var(--light-shadow);
+  margin-bottom: 2rem;
+}
+#featured .tour-card:hover {
+  box-shadow: var(--dark-shadow);
+  transform: scale(1.02);
+}
+#featured .tour-card:hover .tour-img-container .tour-date {
+  opacity: 1;
+}
+#featured .tour-card .tour-img-container {
+  position: relative;
+}
+#featured .tour-card .tour-img-container img {
+  height: 15rem;
+  object-fit: cover;
+}
+#featured .tour-card .tour-img-container .tour-date {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  background-color: var(--clr-primary-5);
+  padding: 0.25rem 0.75rem;
+  color: var(--clr-white);
+  opacity: 0.7;
+  transition: var(--transition);
+}
+#featured .tour-card .tour-info {
+  padding: 1.5rem;
+}
+#featured .tour-card .tour-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+#featured .tour-card .tour-footer p {
+  color: var(--clr-primary-5);
+}
+
+@media (min-width: 768px) {
+  #featured .featured-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  #featured .tour-card {
+    flex: 0 0 calc(50% - 2rem);
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1170px) {
+  #featured .tour-card {
+    flex: 0 0 calc(33.333% - 2rem);
+    margin-bottom: 0;
+  }
+}
 /*
 =============== 
 Contact

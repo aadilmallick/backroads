@@ -261,6 +261,7 @@ About
     .about-img,
     .about-info {
       margin-bottom: 2rem;
+      text-align: center;
     }
   }
 }
@@ -306,6 +307,8 @@ Services
     text-align: center;
     .service {
       margin-bottom: 3rem;
+
+      // styling the icon container
       .service-icon {
         background-color: var(--clr-primary-5);
         color: var(--clr-primary-1);
@@ -329,6 +332,8 @@ Services
   .services-center {
     display: grid;
     gap: 2rem;
+
+    // set horizontal layout for each article
     .service {
       display: flex;
       align-items: flex-start;
@@ -338,6 +343,7 @@ Services
   }
 }
 
+// tablet styling
 @media (min-width: $phone) and (max-width: $laptop) {
   .services-center {
     grid-template-columns: repeat(2, 1fr);
@@ -364,6 +370,80 @@ Services
 Featured Tours
 ===============
 */
+#featured {
+  .tour-card {
+    transition: var(--transition);
+    background: var(--clr-grey-10);
+    box-shadow: var(--light-shadow);
+    margin-bottom: 2rem;
+    &:hover {
+      box-shadow: var(--dark-shadow);
+      transform: scale(1.02);
+      .tour-img-container {
+        .tour-date {
+          opacity: 1;
+        }
+      }
+    }
+    .tour-img-container {
+      position: relative;
+      img {
+        height: 15rem;
+        object-fit: cover;
+      }
+      .tour-date {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 0;
+        background-color: var(--clr-primary-5);
+        padding: 0.25rem 0.75rem;
+        color: var(--clr-white);
+        opacity: 0.7;
+        transition: var(--transition);
+      }
+    }
+    .tour-info {
+      padding: 1.5rem;
+    }
+    .tour-footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
+      p {
+        color: var(--clr-primary-5);
+      }
+    }
+  }
+
+  // .tour-card:hover .tour-info h4 {
+  //   color: red;
+  // }
+}
+
+@media (min-width: $tablet) {
+  #featured {
+    .featured-center {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .tour-card {
+      flex: 0 0 calc(50% - 2rem);
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 1170px) {
+  #featured {
+    .tour-card {
+      flex: 0 0 calc(33.333% - 2rem);
+      margin-bottom: 0;
+    }
+  }
+}
 
 /*
 =============== 
