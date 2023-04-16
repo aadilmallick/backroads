@@ -10,6 +10,7 @@ Fonts
 Variables
 ===============
 */
+$phone: 576px;
 $tablet: 768px;
 $laptop: 992px;
 
@@ -299,6 +300,65 @@ Services
 ===============
 */
 
+#services {
+  background-color: var(--clr-grey-10);
+  .services-center {
+    text-align: center;
+    .service {
+      margin-bottom: 3rem;
+      .service-icon {
+        background-color: var(--clr-primary-5);
+        color: var(--clr-primary-1);
+        padding: 0.5rem;
+        font-size: 1.5rem;
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+      .service-info {
+        p {
+          max-width: 20rem;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+// bigger than phone styling
+@media (min-width: $phone) {
+  .services-center {
+    display: grid;
+    gap: 2rem;
+    .service {
+      display: flex;
+      align-items: flex-start;
+      text-align: left;
+      gap: 0 1rem;
+    }
+  }
+}
+
+@media (min-width: $phone) and (max-width: $laptop) {
+  .services-center {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    .service {
+      // take up two columns, center it.
+      &:last-child {
+        grid-column: span 2;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// laptop styling
+@media (min-width: $laptop) {
+  .services-center {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 /*
 =============== 
 Featured Tours
