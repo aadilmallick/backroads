@@ -190,14 +190,15 @@ p {
 section {
   padding: 5rem 0;
 }
-section .section-title {
+
+.section-title {
   text-align: center;
   margin-bottom: 4rem;
 }
-section .section-title h2 {
+.section-title h2 {
   text-transform: uppercase;
 }
-section .section-title h2 span {
+.section-title h2 span {
   color: var(--clr-primary-5);
 }
 
@@ -448,6 +449,9 @@ Contact
 Gallery
 ===============
 */
+#gallery {
+  padding: 0;
+}
 #gallery .gallery-center {
   display: grid;
   grid-template-columns: 1fr;
@@ -491,5 +495,39 @@ Gallery
 Footer
 ===============
 */
+footer {
+  background-color: var(--clr-grey-1);
+  text-align: center;
+  padding: 5rem 2rem;
+}
+footer .copyright {
+  margin: 0;
+  text-transform: capitalize;
+}
+footer .footer-links,
+footer .footer-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+footer .footer-link {
+  color: var(--clr-white);
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  transition: var(--transition);
+}
+footer .footer-link:hover {
+  color: var(--clr-primary-5);
+}
+footer .footer-icon {
+  color: var(--clr-primary-8);
+  font-size: 2rem;
+  transition: var(--transition);
+}
+footer .footer-icon:hover {
+  color: var(--clr-primary-5);
+}
 
 /*# sourceMappingURL=styles.css.map */

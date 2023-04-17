@@ -87,6 +87,7 @@ ul {
 a {
   text-decoration: none;
 }
+
 img {
   width: 100%;
   display: block;
@@ -187,14 +188,15 @@ p {
 
 section {
   padding: 5rem 0;
-  .section-title {
-    text-align: center;
-    margin-bottom: 4rem;
-    h2 {
-      text-transform: uppercase;
-      span {
-        color: var(--clr-primary-5);
-      }
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+  h2 {
+    text-transform: uppercase;
+    span {
+      color: var(--clr-primary-5);
     }
   }
 }
@@ -495,6 +497,7 @@ Gallery
 */
 
 #gallery {
+  padding: 0;
   .gallery-center {
     display: grid;
     grid-template-columns: 1fr;
@@ -549,3 +552,42 @@ Gallery
 Footer
 ===============
 */
+
+footer {
+  background-color: var(--clr-grey-1);
+  text-align: center;
+  padding: 5rem 2rem;
+
+  .copyright {
+    margin: 0;
+    text-transform: capitalize;
+  }
+
+  .footer-links,
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+  }
+
+  .footer-link {
+    color: var(--clr-white);
+    text-transform: capitalize;
+    letter-spacing: var(--spacing);
+    transition: var(--transition);
+    &:hover {
+      color: var(--clr-primary-5);
+    }
+  }
+
+  .footer-icon {
+    color: var(--clr-primary-8);
+    font-size: 2rem;
+    transition: var(--transition);
+    &:hover {
+      color: var(--clr-primary-5);
+    }
+  }
+}
