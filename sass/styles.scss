@@ -207,6 +207,111 @@ Navbar
 ===============
 */
 
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--clr-white);
+  // box shadow adds distinction between nav and rest of page
+  box-shadow: var(--dark-shadow);
+  z-index: 10;
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+  .nav-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    align-items: center;
+    .nav-logo {
+      width: 12rem;
+    }
+    .nav-toggle {
+      // hamburger button styling
+      background-color: transparent;
+      font-size: 1.5rem;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  .nav-links {
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    &.show-links {
+      height: auto;
+      // the bigger this value, the faster the animation goes
+      max-height: 300px;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      text-transform: capitalize;
+      letter-spacing: var(--spacing);
+      color: var(--clr-grey-1);
+      cursor: pointer;
+      transition: var(--transition);
+      &:hover {
+        // accordion effect
+        color: var(--clr-primary-5);
+        background-color: var(--clr-primary-8);
+        padding-left: calc(2rem + 0.5rem);
+      }
+    }
+  }
+
+  .nav-icons {
+    display: none;
+  }
+}
+
+@media (min-width: $laptop) {
+  .navbar {
+    .nav-header {
+      .nav-toggle {
+        display: none;
+      }
+    }
+    .nav-center {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-links {
+      height: auto;
+      max-height: 300px;
+      display: flex;
+      .nav-link {
+        padding: 1rem;
+        &:hover {
+          padding-left: 1rem;
+        }
+      }
+    }
+    .nav-icons {
+      display: flex;
+      gap: 0 1rem;
+
+      .nav-icon {
+        color: var(--clr-primary-8);
+        font-size: 1.5rem;
+        transition: var(--transition);
+        &:hover {
+          color: var(--clr-primary-5);
+        }
+      }
+    }
+  }
+}
+
 /*
 =============== 
 Hero
